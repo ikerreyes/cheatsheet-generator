@@ -1,0 +1,113 @@
+{% from "table.html" import draw as draw_table%}
+
+{% set footer = footer or none %}
+{% set is_static = is_static or false %}
+
+{% if not is_static %}
+{% raw %}
+{% set printable = printable or false %}
+{% set columns = columns or {% endraw -%}{{columns}}{%- raw %} %}
+{% set width = width or none %}
+{% endraw %}
+{% endif %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>{{ name|title }}</title>
+
+   <!-- Bootstrap -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <style>
+        .div_in_colums {
+        {% if is_static -%}
+            -webkit-column-count: {{columns}};
+            -moz-column-count: {{columns}};
+            column-count: {{columns}};
+        {% else -%}
+            -webkit-column-count: {{"{{columns}}"}};
+            -moz-column-count: {{"{{columns}}"}};
+            column-count: {{"{{columns}}"}};
+        {% endif -%}
+        }
+
+        table colgroup {
+        {% if not is_static -%}
+        {% raw %}
+        {% if width is not none %}
+            width: {{width}}px;
+        {% endif %}
+        {% endraw %}
+        {% endif -%}
+        }
+
+    </style>
+
+    {% if is_static %}
+     <link rel="stylesheet" href="cheatsheet.css">
+    {% else %}
+    <link rel="stylesheet" href="css/cheatsheet.css">
+    {% endif %}
+
+</head>
+<body>
+
+<div id='wrapper'>
+
+    <div class="container" id='main'>
+
+        <h2 {% if not is_static %}{% raw %}{% if printable %}style="display: none"{% endif %}{% endraw %}{% endif %}>{{ name|title }}</h2>
+
+        <div class="div_in_colums">
+
+            {% for k,v in items.items() %}
+                {{ draw_table(k,v) }}
+
+                {% if items|length == 2 %}
+                    <table></table> {# workaround when showing 2 tables #}
+                {% endif %}
+            {% endfor %}
+
+        </div>
+
+    </div> <!-- main -->
+
+
+    {% if footer is not none %}
+        <footer {% if not is_static %}{% raw %}{% if printable %}style="display: none"{% endif %}{% endraw %}{% endif %}>
+            <div class="container-fluid">
+                {% if footer is not none %}
+                    {% for k, v in footer.items() %}
+                        <div class="col-md-4">
+                           <div class='details-header'>{{ k|e }}</div>
+                            <dl class="dl-horizontal">
+                                {% for x,y in v.items() %}
+                                    <dt>{{ x|e }}</dt>
+                                    <dd>{{ y|e }}</dd>
+                                {% endfor %}
+                            </dl>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </footer>
+    {% endif %}
+</div> <!-- wrapper -->
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+     <!-- Bootstrap -->
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+</body>
+</html>

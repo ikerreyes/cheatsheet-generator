@@ -1,0 +1,47 @@
+title = Python packages
+
+
+[pip]
+
+Install a package in site-packages $$ <package> can be a local directory = $ pip install <package>[==<version>]
+
+Install a package in development mode $$ <package> is installed in the current directory and put that in the path = $ pip install -e <package>
+
+Show information related to a <package> = $ pip show <package>
+
+Upgrade a packet and its dependencies $$ Use --no-deps to only upgrade the <package> = $ pip install <package> --upgrade [--no-deps]
+
+Uninstall <package(s)> = $ pip uninstall <package(s)>
+
+Display all installed packages = $ pip list
+
+Display all installed packages in the format that pip install expects $$ Useful to create the requirements.txt file = $ pip freeze
+
+Install packages using a requirements.txt file $$ Useful to create the requirements.txt file = $ pip install -r requirements.txt
+
+[conda]
+
+Create a new virtual environment with <packages> $$ anaconda ca be used as package = $ conda create --name <environment name> <packages>
+
+Activate an environment = $ source activate <environment name>  $$ Use *root* for no environment
+
+Deactivate and environment $$ Goes to root = $ source deactivate
+
+List all environments  = $ conda env list $$ $ conda info --envs   # TODO
+
+Remove an environment = $ conda remove --name <environment name> --all  $$ $ conda env remove --name <environment name> # TODO
+
+Install a package = $ conda install <package>
+
+Uninstall a package = $ conda remove <package>
+
+Export active environment to a file = $ conda env export > environment.yml
+
+Create environment from file = $ conda env create -f environment.yml
+
+Clone an environment = $ conda create --name <environment name> --clone <original environment>
+
+[footer]
+    [[legend]]
+        '[argument]' = Optional argument
+        <argument> = Fill by user

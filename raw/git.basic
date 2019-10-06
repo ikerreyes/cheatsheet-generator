@@ -1,0 +1,75 @@
+title = git
+
+
+[Create]
+
+Clone a repository = $ git clone "<repo>"
+
+Initialize a local repository = $ git init [<project name>]
+
+
+[Local changes]
+
+Show changed files in your working directory = $ git status
+
+# Add
+Add changes to next commit = $ git add <file or directory>
+
+# Remove
+Remove a file (from workspace and index) = $ git rm <file(s)>
+
+    [[Stash]]
+
+    Save local modifications =  $ git stash [save [<message>]]
+
+    Apply changes from last stash state = $ git stash pop
+
+    Discard changes in the stash $$ If no stash is given, the latest is used = $ git stash drop [<stash>]
+
+[Local repository]
+
+# History
+List commits for current branch = $ git log
+
+# Commit
+Commit staged changes = $ git commit [-m "<message>"]
+
+Commit all local changes in tracked files = $ git commit -a [-m "<message>"]
+
+# Tags
+Mark current commit with a tag =  $ git tag <tag name>
+
+    [[Branch]]
+
+    List all local branches =  $ git branch
+
+    Switch to branch = $ git checkout <branch>
+
+    Create a new branch and switch to it = $ git checkout -b <branch>
+
+    Delete specific branch = $ git branch -d <branch>
+
+    [[Merge]]
+
+    Merge branch or commit into current HEAD $$ Use --no-commit to leave changes uncommitted = $ git merge <branch or commit>
+
+
+
+[Remote repository]
+
+Download all changes from remote (but do not integrate them) = $ git fetch [<remote>]
+
+Download changes and merge into HEAD = $ git pull [<remote> [<branch>]] $$ git fetch & git merge FETCH_HEAD
+
+Update server with your commits = $ git push
+
+Publish your tags = $ git push --tags
+
+[footer]
+    [[legend]]
+        '[argument]' = Optional argument
+        <argument> = Fill by user
+
+    [[tools]]
+        git-gui = Check your changes before commit
+        gitk = Track the history

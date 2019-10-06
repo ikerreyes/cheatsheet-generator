@@ -1,0 +1,45 @@
+{% macro hint(text) %}
+    <br/>
+    <span class="hint">{{ text|e }}</span>
+{% endmacro %}
+
+{% macro table_row(value) %}
+    {% set main_text, hints = get_row(value) %}
+    <tr>
+        <td>
+            {{ main_text|e }}
+            {% for h in hints %}
+                {{ hint(h)}}
+            {%- endfor %}
+        </td>
+    </tr>
+
+{%- endmacro %}
+
+{% macro draw(name, data, class='') -%}
+    {% set table_id, title_hints = get_row(name) %}
+    <table id="{{table_id|replace(' ', '_')}}" class="{{class}}">
+        <colgroup/>
+        <thead>
+            <tr>
+                <th>
+                    {{ table_id|e|title }}
+                    {% for h in title_hints %}
+                        {{ hint(h)}}
+                    {% endfor %}
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for k,v in data.items() %}
+                {% if v is mapping %}
+                    {{ draw(k, v, 'nested') }}
+                {% else -%}
+                    {{ table_row(k) }}
+                    {{ table_row(v) }}
+                {% endif %}
+            {% endfor %}
+        </tbody>
+    </table>
+
+{%- endmacro %}

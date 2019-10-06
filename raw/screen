@@ -1,0 +1,33 @@
+title = screen
+
+[Command line]
+
+Launch new screen = $ screen [-L] $$ Use -L to activate logging
+
+Launch new screen with name = $ screen -S <name>
+
+Reconnect to a screen = '$ screen -r [#] $$ If multiple available use the number (or name) to identify which'
+
+Reconnect to an attached screen = $ screen -D -r <session id>
+
+List screens = $ screen -ls
+
+Exit a screen = $ exit
+
+[Control commands $$ Press CTRL+A and the key indicated]
+
+Help with control commands = CTRL+A -> ?
+
+Detach = CTRL+A -> d
+
+Lock = CTRL+A -> x
+
+New window = CTRL+A -> c
+
+Next window = CTRL+A -> n
+
+Kill = CTRL+A -> k
+
+Alerts = CTRL+A -> M
+
+Logging = CTRL+A -> H
