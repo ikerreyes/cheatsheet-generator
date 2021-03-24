@@ -1,0 +1,78 @@
+
+$brand-font: Garamond, "Cormorant Garamond", "Times New Roman", Times, 'serif'
+$baseline-font: "Helvetica Neue Light", Helvetica, Arial, 'sans-serif'
+$console-font: monospace, 'sans-serif'
+
+table
+  font-family: $brand-font
+  border-collapse: collapse
+  width: 100%
+  table-layout: fixed
+  display: inline-block
+  margin-top: 10px
+  margin-bottom: 10px
+
+.nested th
+  color: forestgreen
+
+td, th
+  text-align: left
+  padding: 3px
+
+tr:nth-child(even)
+  background-color: #ffff99
+  font-family:"Courier New", Courier, $console-font
+  font-size: small
+  //color: black
+  //font-weight: bold
+
+th
+  text-align: center
+  border-bottom: 2px solid grey
+  font-size: 16px
+  color: #1c94c4
+
+.hint
+    font-family: italic
+    font-size: smaller
+    color: darkgrey
+
+
+.not-show
+  display: none
+
+
+h1, h2
+  font-family: $baseline-font
+  text-align: center
+
+
+
+/* Footer */
+
+html, body
+  margin: 0
+  padding: 0
+  height: 100%
+
+#wrapper
+  min-height: 100%
+  position: relative
+
+$footer_size: 85px
+
+#main
+  padding-bottom: $footer_size
+
+footer
+  border-top: solid 2px #E5E5E5
+  width: 100%
+  height: $footer_size
+  position: absolute
+  bottom: 0
+  left: 0
+
+//
+.details-header
+  text-align: center
+  font-family: cursive

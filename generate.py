@@ -12,6 +12,7 @@ def get_row(values):
         l = values
     return l[0], [] if len(l) == 1 else l[1:]
 
+
 def load_configuration(file):
     lines = []
     prev_line = []
@@ -28,7 +29,7 @@ def load_configuration(file):
     return lines
 
 
-def generate_cheatsheet(configuration_file, output_file, static=False):
+def generate_cheatsheet(configuration_file, output_file, static=True):
     try:
         os.remove(output_file)
     except OSError:
@@ -38,7 +39,7 @@ def generate_cheatsheet(configuration_file, output_file, static=False):
 
     items = ConfigObj(configuration_file)
 
-    kw['is_static'] = static
+    kw['is_static'] = static  # set static to False to generate a Jinja template
 
     title = items.pop('title', os.path.basename(configuration_file))
 
@@ -55,6 +56,9 @@ def generate_cheatsheet(configuration_file, output_file, static=False):
     directory = os.path.dirname(os.path.abspath(__file__))
     env = Environment(loader=FileSystemLoader(os.path.join(directory, 'templates')))
     env.globals['get_row'] = get_row
+
+    with open(os.path.join(directory, 'style', 'cheatsheet.css')) as fd:
+        kw['ccs_content'] = fd.read()
 
     with open(os.path.join(output_file), 'w') as fd:
         fd.write(env.get_template('cheatsheet.html').render(**kw))

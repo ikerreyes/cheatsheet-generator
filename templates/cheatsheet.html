@@ -1,4 +1,4 @@
-{% from "table.html" import draw as draw_table%}
+{% from "table.html" import draw as draw_table %}
 
 {% set footer = footer or none %}
 {% set is_static = is_static or false %}
@@ -51,7 +51,9 @@
     </style>
 
     {% if is_static %}
-     <link rel="stylesheet" href="cheatsheet.css">
+    <style type="text/css">
+        {{ ccs_content }}
+    </style>
     {% else %}
     <link rel="stylesheet" href="css/cheatsheet.css">
     {% endif %}

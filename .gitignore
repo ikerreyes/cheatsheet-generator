@@ -1,3 +1,6 @@
 
 # Pycharm files
 .idea
+
+# sass map
+style/*.css.map

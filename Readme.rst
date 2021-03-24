@@ -11,7 +11,8 @@ into a HTML cheatsheet.
 How to use
 ----------
 
-Compile the scss file in the style folder and then
+Install Python (and configobj and jinja2)
+and SASS and then
 run the Makefile: all cheatsheets in the raw folder
 will be built.
 
