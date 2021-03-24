@@ -7,6 +7,14 @@ an ini-like file (one that can be read with
 `configobj <https://pypi.org/project/configobj/>`_)
 into a HTML cheatsheet.
 
+Already built images can be found in the
+`build` directory:
+
+- `conda <https://htmlpreview.github.io/?https://github.com/ikerreyes/cheatsheet-generator/blob/master/build/conda.html>`_
+- `git <https://htmlpreview.github.io/?https://github.com/ikerreyes/cheatsheet-generator/blob/master/build/git.html>`_
+  (and a `basic version <https://htmlpreview.github.io/?https://github.com/ikerreyes/cheatsheet-generator/blob/master/build/git.basic.html>`_)
+- `python packages <https://htmlpreview.github.io/?https://github.com/ikerreyes/cheatsheet-generator/blob/master/build/python_packages.html>`_
+- `screen <https://htmlpreview.github.io/?https://github.com/ikerreyes/cheatsheet-generator/blob/master/build/screen.html>`_
 
 How to use
 ----------
