@@ -1,0 +1,573 @@
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Python Packages</title>
+
+   <!-- Bootstrap -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <style>
+        .div_in_colums {
+        -webkit-column-count: 2;
+            -moz-column-count: 2;
+            column-count: 2;
+        }
+
+        table colgroup {
+        }
+
+    </style>
+
+    
+    <style type="text/css">
+        table {
+  font-family: Garamond, "Cormorant Garamond", "Times New Roman", Times, "serif";
+  border-collapse: collapse;
+  width: 100%;
+  table-layout: fixed;
+  display: inline-block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.nested th {
+  color: forestgreen;
+}
+
+td, th {
+  text-align: left;
+  padding: 3px;
+}
+
+tr:nth-child(even) {
+  background-color: #ffff99;
+  font-family: "Courier New", Courier, monospace, "sans-serif";
+  font-size: small;
+}
+
+th {
+  text-align: center;
+  border-bottom: 2px solid grey;
+  font-size: 16px;
+  color: #1c94c4;
+}
+
+.hint {
+  font-family: italic;
+  font-size: smaller;
+  color: darkgrey;
+}
+
+.not-show {
+  display: none;
+}
+
+h1, h2 {
+  font-family: "Helvetica Neue Light", Helvetica, Arial, "sans-serif";
+  text-align: center;
+}
+
+/* Footer */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+#wrapper {
+  min-height: 100%;
+  position: relative;
+}
+
+#main {
+  padding-bottom: 85px;
+}
+
+footer {
+  border-top: solid 2px #E5E5E5;
+  width: 100%;
+  height: 85px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.details-header {
+  text-align: center;
+  font-family: cursive;
+}
+
+/*# sourceMappingURL=cheatsheet.css.map */
+
+    </style>
+    
+
+</head>
+<body>
+
+<div id='wrapper'>
+
+    <div class="container" id='main'>
+
+        <h2 >Python Packages</h2>
+
+        <div class="div_in_colums">
+
+            
+                
+    <table id="pip" class="">
+        <colgroup/>
+        <thead>
+            <tr>
+                <th>
+                    Pip
+                    
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            
+                
+    
+    <tr>
+        <td>
+            Install a package in site-packages 
+            
+                
+    <br/>
+    <span class="hint"> &lt;package&gt; can be a local directory</span>
+
+        </td>
+    </tr>
+                    
+    
+    <tr>
+        <td>
+            $ pip install &lt;package&gt;[==&lt;version&gt;]
+            
+        </td>
+    </tr>
+                
+            
+                
+    
+    <tr>
+        <td>
+            Install a package in development mode 
+            
+                
+    <br/>
+    <span class="hint"> &lt;package&gt; is installed in the current directory and put that in the path</span>
+
+        </td>
+    </tr>
+                    
+    
+    <tr>
+        <td>
+            $ pip install -e &lt;package&gt;
+            
+        </td>
+    </tr>
+                
+            
+                
+    
+    <tr>
+        <td>
+            Show information related to a &lt;package&gt;
+            
+        </td>
+    </tr>
+                    
+    
+    <tr>
+        <td>
+            $ pip show &lt;package&gt;
+            
+        </td>
+    </tr>
+                
+            
+                
+    
+    <tr>
+        <td>
+            Upgrade a packet and its dependencies 
+            
+                
+    <br/>
+    <span class="hint"> Use --no-deps to only upgrade the &lt;package&gt;</span>
+
+        </td>
+    </tr>
+                    
+    
+    <tr>
+        <td>
+            $ pip install &lt;package&gt; --upgrade [--no-deps]
+            
+        </td>
+    </tr>
+                
+            
+                
+    
+    <tr>
+        <td>
+            Uninstall &lt;package(s)&gt;
+            
+        </td>
+    </tr>
+                    
+    
+    <tr>
+        <td>
+            $ pip uninstall &lt;package(s)&gt;
+            
+        </td>
+    </tr>
+                
+            
+                
+    
+    <tr>
+        <td>
+            Display all installed packages
+            
+        </td>
+    </tr>
+                    
+    
+    <tr>
+        <td>
+            $ pip list
+            
+        </td>
+    </tr>
+                
+            
+                
+    
+    <tr>
+        <td>
+            Display all installed packages in the format that pip install expects 
+            
+                
+    <br/>
+    <span class="hint"> Useful to create the requirements.txt file</span>
+
+        </td>
+    </tr>
+                    
+    
+    <tr>
+        <td>
+            $ pip freeze
+            
+        </td>
+    </tr>
+                
+            
+                
+    
+    <tr>
+        <td>
+            Install packages using a requirements.txt file 
+            
+                
+    <br/>
+    <span class="hint"> Useful to create the requirements.txt file</span>
+
+        </td>
+    </tr>
+                    
+    
+    <tr>
+        <td>
+            $ pip install -r requirements.txt
+            
+        </td>
+    </tr>
+                
+            
+        </tbody>
+    </table>
+
+                
+                    <table></table> 
+                
+            
+                
+    <table id="conda" class="">
+        <colgroup/>
+        <thead>
+            <tr>
+                <th>
+                    Conda
+                    
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            
+                
+    
+    <tr>
+        <td>
+            Create a new virtual environment with &lt;packages&gt; 
+            
+                
+    <br/>
+    <span class="hint"> anaconda ca be used as package</span>
+
+        </td>
+    </tr>
+                    
+    
+    <tr>
+        <td>
+            $ conda create --name &lt;environment name&gt; &lt;packages&gt;
+            
+        </td>
+    </tr>
+                
+            
+                
+    
+    <tr>
+        <td>
+            Activate an environment
+            
+        </td>
+    </tr>
+                    
+    
+    <tr>
+        <td>
+            $ source activate &lt;environment name&gt;  
+            
+                
+    <br/>
+    <span class="hint"> Use *root* for no environment</span>
+
+        </td>
+    </tr>
+                
+            
+                
+    
+    <tr>
+        <td>
+            Deactivate and environment 
+            
+                
+    <br/>
+    <span class="hint"> Goes to root</span>
+
+        </td>
+    </tr>
+                    
+    
+    <tr>
+        <td>
+            $ source deactivate
+            
+        </td>
+    </tr>
+                
+            
+                
+    
+    <tr>
+        <td>
+            List all environments
+            
+        </td>
+    </tr>
+                    
+    
+    <tr>
+        <td>
+            $ conda env list 
+            
+                
+    <br/>
+    <span class="hint"> $ conda info --envs</span>
+
+        </td>
+    </tr>
+                
+            
+                
+    
+    <tr>
+        <td>
+            Remove an environment
+            
+        </td>
+    </tr>
+                    
+    
+    <tr>
+        <td>
+            $ conda remove --name &lt;environment name&gt; --all  
+            
+                
+    <br/>
+    <span class="hint"> $ conda env remove --name &lt;environment name&gt;</span>
+
+        </td>
+    </tr>
+                
+            
+                
+    
+    <tr>
+        <td>
+            Install a package
+            
+        </td>
+    </tr>
+                    
+    
+    <tr>
+        <td>
+            $ conda install &lt;package&gt;
+            
+        </td>
+    </tr>
+                
+            
+                
+    
+    <tr>
+        <td>
+            Uninstall a package
+            
+        </td>
+    </tr>
+                    
+    
+    <tr>
+        <td>
+            $ conda remove &lt;package&gt;
+            
+        </td>
+    </tr>
+                
+            
+                
+    
+    <tr>
+        <td>
+            Export active environment to a file
+            
+        </td>
+    </tr>
+                    
+    
+    <tr>
+        <td>
+            $ conda env export &gt; environment.yml
+            
+        </td>
+    </tr>
+                
+            
+                
+    
+    <tr>
+        <td>
+            Create environment from file
+            
+        </td>
+    </tr>
+                    
+    
+    <tr>
+        <td>
+            $ conda env create -f environment.yml
+            
+        </td>
+    </tr>
+                
+            
+                
+    
+    <tr>
+        <td>
+            Clone an environment
+            
+        </td>
+    </tr>
+                    
+    
+    <tr>
+        <td>
+            $ conda create --name &lt;environment name&gt; --clone &lt;original environment&gt;
+            
+        </td>
+    </tr>
+                
+            
+        </tbody>
+    </table>
+
+                
+                    <table></table> 
+                
+            
+
+        </div>
+
+    </div> <!-- main -->
+
+
+    
+        <footer >
+            <div class="container-fluid">
+                
+                    
+                        <div class="col-md-4">
+                           <div class='details-header'>legend</div>
+                            <dl class="dl-horizontal">
+                                
+                                    <dt>[argument]</dt>
+                                    <dd>Optional argument</dd>
+                                
+                                    <dt>&lt;argument&gt;</dt>
+                                    <dd>Fill by user</dd>
+                                
+                            </dl>
+                        </div>
+                    
+                
+            </div>
+        </footer>
+    
+</div> <!-- wrapper -->
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+     <!-- Bootstrap -->
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,453 @@
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Screen</title>
+
+   <!-- Bootstrap -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <style>
+        .div_in_colums {
+        -webkit-column-count: 2;
+            -moz-column-count: 2;
+            column-count: 2;
+        }
+
+        table colgroup {
+        }
+
+    </style>
+
+    
+    <style type="text/css">
+        table {
+  font-family: Garamond, "Cormorant Garamond", "Times New Roman", Times, "serif";
+  border-collapse: collapse;
+  width: 100%;
+  table-layout: fixed;
+  display: inline-block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.nested th {
+  color: forestgreen;
+}
+
+td, th {
+  text-align: left;
+  padding: 3px;
+}
+
+tr:nth-child(even) {
+  background-color: #ffff99;
+  font-family: "Courier New", Courier, monospace, "sans-serif";
+  font-size: small;
+}
+
+th {
+  text-align: center;
+  border-bottom: 2px solid grey;
+  font-size: 16px;
+  color: #1c94c4;
+}
+
+.hint {
+  font-family: italic;
+  font-size: smaller;
+  color: darkgrey;
+}
+
+.not-show {
+  display: none;
+}
+
+h1, h2 {
+  font-family: "Helvetica Neue Light", Helvetica, Arial, "sans-serif";
+  text-align: center;
+}
+
+/* Footer */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+#wrapper {
+  min-height: 100%;
+  position: relative;
+}
+
+#main {
+  padding-bottom: 85px;
+}
+
+footer {
+  border-top: solid 2px #E5E5E5;
+  width: 100%;
+  height: 85px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.details-header {
+  text-align: center;
+  font-family: cursive;
+}
+
+/*# sourceMappingURL=cheatsheet.css.map */
+
+    </style>
+    
+
+</head>
+<body>
+
+<div id='wrapper'>
+
+    <div class="container" id='main'>
+
+        <h2 >Screen</h2>
+
+        <div class="div_in_colums">
+
+            
+                
+    <table id="Command_line" class="">
+        <colgroup/>
+        <thead>
+            <tr>
+                <th>
+                    Command Line
+                    
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            
+                
+    
+    <tr>
+        <td>
+            Launch new screen
+            
+        </td>
+    </tr>
+                    
+    
+    <tr>
+        <td>
+            $ screen [-L] 
+            
+                
+    <br/>
+    <span class="hint"> Use -L to activate logging</span>
+
+        </td>
+    </tr>
+                
+            
+                
+    
+    <tr>
+        <td>
+            Launch new screen with name
+            
+        </td>
+    </tr>
+                    
+    
+    <tr>
+        <td>
+            $ screen -S &lt;name&gt;
+            
+        </td>
+    </tr>
+                
+            
+                
+    
+    <tr>
+        <td>
+            Reconnect to a screen
+            
+        </td>
+    </tr>
+                    
+    
+    <tr>
+        <td>
+            $ screen -r [#] 
+            
+                
+    <br/>
+    <span class="hint"> If multiple available use the number (or name) to identify which</span>
+
+        </td>
+    </tr>
+                
+            
+                
+    
+    <tr>
+        <td>
+            Reconnect to an attached screen
+            
+        </td>
+    </tr>
+                    
+    
+    <tr>
+        <td>
+            $ screen -D -r &lt;session id&gt;
+            
+        </td>
+    </tr>
+                
+            
+                
+    
+    <tr>
+        <td>
+            List screens
+            
+        </td>
+    </tr>
+                    
+    
+    <tr>
+        <td>
+            $ screen -ls
+            
+        </td>
+    </tr>
+                
+            
+                
+    
+    <tr>
+        <td>
+            Exit a screen
+            
+        </td>
+    </tr>
+                    
+    
+    <tr>
+        <td>
+            $ exit
+            
+        </td>
+    </tr>
+                
+            
+        </tbody>
+    </table>
+
+                
+                    <table></table> 
+                
+            
+                
+    <table id="Control_commands_" class="">
+        <colgroup/>
+        <thead>
+            <tr>
+                <th>
+                    Control Commands 
+                    
+                        
+    <br/>
+    <span class="hint"> Press CTRL+A and the key indicated</span>
+
+                    
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            
+                
+    
+    <tr>
+        <td>
+            Help with control commands
+            
+        </td>
+    </tr>
+                    
+    
+    <tr>
+        <td>
+            CTRL+A -&gt; ?
+            
+        </td>
+    </tr>
+                
+            
+                
+    
+    <tr>
+        <td>
+            Detach
+            
+        </td>
+    </tr>
+                    
+    
+    <tr>
+        <td>
+            CTRL+A -&gt; d
+            
+        </td>
+    </tr>
+                
+            
+                
+    
+    <tr>
+        <td>
+            Lock
+            
+        </td>
+    </tr>
+                    
+    
+    <tr>
+        <td>
+            CTRL+A -&gt; x
+            
+        </td>
+    </tr>
+                
+            
+                
+    
+    <tr>
+        <td>
+            New window
+            
+        </td>
+    </tr>
+                    
+    
+    <tr>
+        <td>
+            CTRL+A -&gt; c
+            
+        </td>
+    </tr>
+                
+            
+                
+    
+    <tr>
+        <td>
+            Next window
+            
+        </td>
+    </tr>
+                    
+    
+    <tr>
+        <td>
+            CTRL+A -&gt; n
+            
+        </td>
+    </tr>
+                
+            
+                
+    
+    <tr>
+        <td>
+            Kill
+            
+        </td>
+    </tr>
+                    
+    
+    <tr>
+        <td>
+            CTRL+A -&gt; k
+            
+        </td>
+    </tr>
+                
+            
+                
+    
+    <tr>
+        <td>
+            Alerts
+            
+        </td>
+    </tr>
+                    
+    
+    <tr>
+        <td>
+            CTRL+A -&gt; M
+            
+        </td>
+    </tr>
+                
+            
+                
+    
+    <tr>
+        <td>
+            Logging
+            
+        </td>
+    </tr>
+                    
+    
+    <tr>
+        <td>
+            CTRL+A -&gt; H
+            
+        </td>
+    </tr>
+                
+            
+        </tbody>
+    </table>
+
+                
+                    <table></table> 
+                
+            
+
+        </div>
+
+    </div> <!-- main -->
+
+
+    
+</div> <!-- wrapper -->
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+     <!-- Bootstrap -->
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+</body>
+</html>

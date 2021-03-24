@@ -1,0 +1,1332 @@
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Git</title>
+
+   <!-- Bootstrap -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <style>
+        .div_in_colums {
+        -webkit-column-count: 3;
+            -moz-column-count: 3;
+            column-count: 3;
+        }
+
+        table colgroup {
+        }
+
+    </style>
+
+    
+    <style type="text/css">
+        table {
+  font-family: Garamond, "Cormorant Garamond", "Times New Roman", Times, "serif";
+  border-collapse: collapse;
+  width: 100%;
+  table-layout: fixed;
+  display: inline-block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.nested th {
+  color: forestgreen;
+}
+
+td, th {
+  text-align: left;
+  padding: 3px;
+}
+
+tr:nth-child(even) {
+  background-color: #ffff99;
+  font-family: "Courier New", Courier, monospace, "sans-serif";
+  font-size: small;
+}
+
+th {
+  text-align: center;
+  border-bottom: 2px solid grey;
+  font-size: 16px;
+  color: #1c94c4;
+}
+
+.hint {
+  font-family: italic;
+  font-size: smaller;
+  color: darkgrey;
+}
+
+.not-show {
+  display: none;
+}
+
+h1, h2 {
+  font-family: "Helvetica Neue Light", Helvetica, Arial, "sans-serif";
+  text-align: center;
+}
+
+/* Footer */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+#wrapper {
+  min-height: 100%;
+  position: relative;
+}
+
+#main {
+  padding-bottom: 85px;
+}
+
+footer {
+  border-top: solid 2px #E5E5E5;
+  width: 100%;
+  height: 85px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.details-header {
+  text-align: center;
+  font-family: cursive;
+}
+
+/*# sourceMappingURL=cheatsheet.css.map */
+
+    </style>
+    
+
+</head>
+<body>
+
+<div id='wrapper'>
+
+    <div class="container" id='main'>
+
+        <h2 >Git</h2>
+
+        <div class="div_in_colums">
+
+            
+                
+    <table id="Create" class="">
+        <colgroup/>
+        <thead>
+            <tr>
+                <th>
+                    Create
+                    
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            
+                
+    
+    <tr>
+        <td>
+            Clone a repository
+            
+        </td>
+    </tr>
+                    
+    
+    <tr>
+        <td>
+            $ git clone &#34;&lt;repo&gt;&#34;
+            
+        </td>
+    </tr>
+                
+            
+                
+    
+    <tr>
+        <td>
+            Initialize a local repository
+            
+        </td>
+    </tr>
+                    
+    
+    <tr>
+        <td>
+            $ git init [&lt;project name&gt;]
+            
+        </td>
+    </tr>
+                
+            
+        </tbody>
+    </table>
+
+                
+            
+                
+    <table id="Local_changes" class="">
+        <colgroup/>
+        <thead>
+            <tr>
+                <th>
+                    Local Changes
+                    
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            
+                
+    
+    <tr>
+        <td>
+            Show changed files in your working directory
+            
+        </td>
+    </tr>
+                    
+    
+    <tr>
+        <td>
+            $ git status
+            
+        </td>
+    </tr>
+                
+            
+                
+    
+    <tr>
+        <td>
+            Show ignored files
+            
+        </td>
+    </tr>
+                    
+    
+    <tr>
+        <td>
+            $ git status --ignored
+            
+        </td>
+    </tr>
+                
+            
+                
+    
+    <tr>
+        <td>
+            Show differences not added to index
+            
+        </td>
+    </tr>
+                    
+    
+    <tr>
+        <td>
+            $ git diff
+            
+        </td>
+    </tr>
+                
+            
+                
+    
+    <tr>
+        <td>
+            Show difference between staging area and repo
+            
+        </td>
+    </tr>
+                    
+    
+    <tr>
+        <td>
+            
+            
+                
+    <br/>
+    <span class="hint"> git diff --staged [file]</span>
+
+        </td>
+    </tr>
+                
+            
+                
+    
+    <tr>
+        <td>
+            Show differences relative to a branch or commit
+            
+        </td>
+    </tr>
+                    
+    
+    <tr>
+        <td>
+            $ git diff &lt;commit or branch&gt;
+            
+        </td>
+    </tr>
+                
+            
+                
+    
+    <tr>
+        <td>
+            Add changes to next commit
+            
+        </td>
+    </tr>
+                    
+    
+    <tr>
+        <td>
+            $ git add &lt;file or directory&gt;  
+            
+                
+    <br/>
+    <span class="hint"> use -u to add changes in all tracked files</span>
+
+        </td>
+    </tr>
+                
+            
+                
+    
+    <tr>
+        <td>
+            Remove file(s) from next commit
+            
+        </td>
+    </tr>
+                    
+    
+    <tr>
+        <td>
+            $ git reset HEAD &lt;file(s)&gt; 
+            
+                
+    <br/>
+    <span class="hint"> to undo all $ git reset .</span>
+
+        </td>
+    </tr>
+                
+            
+                
+    
+    <tr>
+        <td>
+            Remove a file (from workspace and index)
+            
+        </td>
+    </tr>
+                    
+    
+    <tr>
+        <td>
+            $ git rm &lt;file(s)&gt;
+            
+        </td>
+    </tr>
+                
+            
+                
+    
+    <tr>
+        <td>
+            Rename a file (in workspace and index)
+            
+        </td>
+    </tr>
+                    
+    
+    <tr>
+        <td>
+            $ git mv &lt;file(s)&gt;
+            
+        </td>
+    </tr>
+                
+            
+                
+    
+    <tr>
+        <td>
+            Remove files not under version control
+            
+        </td>
+    </tr>
+                    
+    
+    <tr>
+        <td>
+            $ git clean  
+            
+                
+    <br/>
+    <span class="hint"> use -n for &#34;dry run&#34; and -f to delete the files</span>
+
+        </td>
+    </tr>
+                
+            
+                
+    
+    <tr>
+        <td>
+            Discard uncommitted changes
+            
+        </td>
+    </tr>
+                    
+    
+    <tr>
+        <td>
+            $ git checkout -- &lt;file(s) | dir&gt;
+            
+        </td>
+    </tr>
+                
+            
+                
+                    
+    <table id="Stash" class="nested">
+        <colgroup/>
+        <thead>
+            <tr>
+                <th>
+                    Stash
+                    
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            
+                
+    
+    <tr>
+        <td>
+            Save local modifications
+            
+        </td>
+    </tr>
+                    
+    
+    <tr>
+        <td>
+            $ git stash [save [&lt;message&gt;]]
+            
+        </td>
+    </tr>
+                
+            
+                
+    
+    <tr>
+        <td>
+            List stashes
+            
+        </td>
+    </tr>
+                    
+    
+    <tr>
+        <td>
+            $ git stash list
+            
+        </td>
+    </tr>
+                
+            
+                
+    
+    <tr>
+        <td>
+            Remove all stashed states
+            
+        </td>
+    </tr>
+                    
+    
+    <tr>
+        <td>
+            $ git stash clear
+            
+        </td>
+    </tr>
+                
+            
+                
+    
+    <tr>
+        <td>
+            Discard changes in the stash 
+            
+                
+    <br/>
+    <span class="hint"> If no stash is given, the latest is used</span>
+
+        </td>
+    </tr>
+                    
+    
+    <tr>
+        <td>
+            $ git stash drop [&lt;stash&gt;]
+            
+        </td>
+    </tr>
+                
+            
+                
+    
+    <tr>
+        <td>
+            Apply changes from stash 
+            
+                
+    <br/>
+    <span class="hint"> If no stash is given, the latest is used</span>
+
+        </td>
+    </tr>
+                    
+    
+    <tr>
+        <td>
+            $ git stash apply [&lt;stash&gt;]
+            
+        </td>
+    </tr>
+                
+            
+                
+    
+    <tr>
+        <td>
+            Apply changes from last stash state and remove it
+            
+        </td>
+    </tr>
+                    
+    
+    <tr>
+        <td>
+            $ git stash pop  
+            
+                
+    <br/>
+    <span class="hint"> $ git stash apply &amp; git stash drop</span>
+
+        </td>
+    </tr>
+                
+            
+        </tbody>
+    </table>
+                
+            
+        </tbody>
+    </table>
+
+                
+            
+                
+    <table id="Local_repository" class="">
+        <colgroup/>
+        <thead>
+            <tr>
+                <th>
+                    Local Repository
+                    
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            
+                
+    
+    <tr>
+        <td>
+            List commits for current branch
+            
+        </td>
+    </tr>
+                    
+    
+    <tr>
+        <td>
+            $ git log
+            
+        </td>
+    </tr>
+                
+            
+                
+    
+    <tr>
+        <td>
+            View changes between two commits
+            
+        </td>
+    </tr>
+                    
+    
+    <tr>
+        <td>
+            $ git diff &lt;commit&gt; &lt;commit&gt;
+            
+        </td>
+    </tr>
+                
+            
+                
+    
+    <tr>
+        <td>
+            Stop tracking a file
+            
+        </td>
+    </tr>
+                    
+    
+    <tr>
+        <td>
+            $ git rm --cached &lt;file&gt;
+            
+        </td>
+    </tr>
+                
+            
+                
+                    
+    <table id="Branch" class="nested">
+        <colgroup/>
+        <thead>
+            <tr>
+                <th>
+                    Branch
+                    
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            
+                
+    
+    <tr>
+        <td>
+            List branches
+            
+        </td>
+    </tr>
+                    
+    
+    <tr>
+        <td>
+            $ git branch  
+            
+                
+    <br/>
+    <span class="hint"> -r for remote and -a for local and remote</span>
+
+        </td>
+    </tr>
+                
+            
+                
+    
+    <tr>
+        <td>
+            Switch to branch
+            
+        </td>
+    </tr>
+                    
+    
+    <tr>
+        <td>
+            $ git checkout &lt;branch&gt;
+            
+        </td>
+    </tr>
+                
+            
+                
+    
+    <tr>
+        <td>
+            Create a new branch and switch to it
+            
+        </td>
+    </tr>
+                    
+    
+    <tr>
+        <td>
+            $ git checkout -b &lt;branch&gt;
+            
+        </td>
+    </tr>
+                
+            
+                
+    
+    <tr>
+        <td>
+            Delete specific branch
+            
+        </td>
+    </tr>
+                    
+    
+    <tr>
+        <td>
+            $ git branch -d &lt;branch&gt;
+            
+        </td>
+    </tr>
+                
+            
+                
+    
+    <tr>
+        <td>
+            Create a branch that tracks a remote one
+            
+        </td>
+    </tr>
+                    
+    
+    <tr>
+        <td>
+            $ git branch --track &lt;branch&gt; &lt;remote&gt;/&lt;branch&gt;
+            
+        </td>
+    </tr>
+                
+            
+        </tbody>
+    </table>
+                
+            
+                
+                    
+    <table id="Commit" class="nested">
+        <colgroup/>
+        <thead>
+            <tr>
+                <th>
+                    Commit
+                    
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            
+                
+    
+    <tr>
+        <td>
+            Commit staged changes
+            
+        </td>
+    </tr>
+                    
+    
+    <tr>
+        <td>
+            $ git commit [-m &#34;&lt;message&gt;&#34;]
+            
+        </td>
+    </tr>
+                
+            
+                
+    
+    <tr>
+        <td>
+            Commit all local changes in tracked files
+            
+        </td>
+    </tr>
+                    
+    
+    <tr>
+        <td>
+            $ git commit -a [-m &#34;&lt;message&gt;&#34;]
+            
+        </td>
+    </tr>
+                
+            
+                
+    
+    <tr>
+        <td>
+            Undo last commit
+            
+        </td>
+    </tr>
+                    
+    
+    <tr>
+        <td>
+            $ git reset [--soft] HEAD~1 
+            
+                
+    <br/>
+    <span class="hint"> --soft to leave changes on index</span>
+
+        </td>
+    </tr>
+                
+            
+                
+    
+    <tr>
+        <td>
+            Discard a some commits from current branch 
+            
+                
+    <br/>
+    <span class="hint"> changes are lost</span>
+
+        </td>
+    </tr>
+                    
+    
+    <tr>
+        <td>
+            $ git reset --hard HEAD~&lt;X&gt;|&lt;commit&gt;
+            
+        </td>
+    </tr>
+                
+            
+                
+    
+    <tr>
+        <td>
+            Modify last commit with current changes in index
+            
+        </td>
+    </tr>
+                    
+    
+    <tr>
+        <td>
+            $ git commit --amend
+            
+        </td>
+    </tr>
+                
+            
+                
+    
+    <tr>
+        <td>
+            Reverse a commit and commit the results
+            
+        </td>
+    </tr>
+                    
+    
+    <tr>
+        <td>
+            $ git revert &lt;commit&gt;
+            
+        </td>
+    </tr>
+                
+            
+                
+    
+    <tr>
+        <td>
+            Revert all commits since your branch deviated from other and apply them one by by on top of the HEAD of that branch
+            
+        </td>
+    </tr>
+                    
+    
+    <tr>
+        <td>
+            $ git rebase &lt;branch&gt;
+            
+        </td>
+    </tr>
+                
+            
+        </tbody>
+    </table>
+                
+            
+                
+                    
+    <table id="Tags" class="nested">
+        <colgroup/>
+        <thead>
+            <tr>
+                <th>
+                    Tags
+                    
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            
+                
+    
+    <tr>
+        <td>
+            Mark current commit with a tag
+            
+        </td>
+    </tr>
+                    
+    
+    <tr>
+        <td>
+            $ git tag &lt;tag name&gt;
+            
+        </td>
+    </tr>
+                
+            
+                
+    
+    <tr>
+        <td>
+            Mark current commit with an annotated tag
+            
+        </td>
+    </tr>
+                    
+    
+    <tr>
+        <td>
+            $ git tag -a &lt;tag name&gt; -m &#34;&lt;tag message&gt;&#34;
+            
+        </td>
+    </tr>
+                
+            
+                
+    
+    <tr>
+        <td>
+            Remove tag
+            
+        </td>
+    </tr>
+                    
+    
+    <tr>
+        <td>
+            $ git tag --delete &lt;tag name&gt;
+            
+        </td>
+    </tr>
+                
+            
+        </tbody>
+    </table>
+                
+            
+                
+                    
+    <table id="Merge" class="nested">
+        <colgroup/>
+        <thead>
+            <tr>
+                <th>
+                    Merge
+                    
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            
+                
+    
+    <tr>
+        <td>
+            Show differences between staged changes and a commit (default latest)
+            
+        </td>
+    </tr>
+                    
+    
+    <tr>
+        <td>
+            $ git diff --cached [&lt;commit&gt;]
+            
+        </td>
+    </tr>
+                
+            
+                
+    
+    <tr>
+        <td>
+            Merge branch or commit into current HEAD 
+            
+                
+    <br/>
+    <span class="hint"> Use --no-commit to leave changes uncommitted</span>
+
+        </td>
+    </tr>
+                    
+    
+    <tr>
+        <td>
+            $ git merge &lt;branch or commit&gt;
+            
+        </td>
+    </tr>
+                
+            
+                
+    
+    <tr>
+        <td>
+            Integrate changes from a specific commit
+            
+        </td>
+    </tr>
+                    
+    
+    <tr>
+        <td>
+            $ git cherry-pick &lt;commit&gt;
+            
+        </td>
+    </tr>
+                
+            
+        </tbody>
+    </table>
+                
+            
+        </tbody>
+    </table>
+
+                
+            
+                
+    <table id="Remote_repository" class="">
+        <colgroup/>
+        <thead>
+            <tr>
+                <th>
+                    Remote Repository
+                    
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            
+                
+    
+    <tr>
+        <td>
+            Download all changes from remote (but do not integrate them)
+            
+        </td>
+    </tr>
+                    
+    
+    <tr>
+        <td>
+            $ git fetch [&lt;remote&gt;]
+            
+        </td>
+    </tr>
+                
+            
+                
+    
+    <tr>
+        <td>
+            Download changes and merge into HEAD
+            
+        </td>
+    </tr>
+                    
+    
+    <tr>
+        <td>
+            $ git pull [&lt;remote&gt; [&lt;branch&gt;]] 
+            
+                
+    <br/>
+    <span class="hint"> git fetch &amp; git merge FETCH_HEAD</span>
+
+        </td>
+    </tr>
+                
+            
+                
+    
+    <tr>
+        <td>
+            Update server with your commits
+            
+        </td>
+    </tr>
+                    
+    
+    <tr>
+        <td>
+            $ git push [&lt;remote&gt;/&lt;branch&gt;]
+            
+        </td>
+    </tr>
+                
+            
+                
+    
+    <tr>
+        <td>
+            Push new branch to remote with a different name
+            
+        </td>
+    </tr>
+                    
+    
+    <tr>
+        <td>
+            $ git push &lt;remote&gt; &lt;branch&gt;:&lt;new branch&gt;
+            
+        </td>
+    </tr>
+                
+            
+                
+    
+    <tr>
+        <td>
+            Delete remote branch 
+            
+                
+    <br/>
+    <span class="hint"> push nothing</span>
+
+        </td>
+    </tr>
+                    
+    
+    <tr>
+        <td>
+            $ git push &lt;remote&gt; :&lt;branch&gt;
+            
+        </td>
+    </tr>
+                
+            
+                
+    
+    <tr>
+        <td>
+            Publish all your tags
+            
+        </td>
+    </tr>
+                    
+    
+    <tr>
+        <td>
+            $ git push --tags
+            
+        </td>
+    </tr>
+                
+            
+                
+    
+    <tr>
+        <td>
+            Publish specific tag
+            
+        </td>
+    </tr>
+                    
+    
+    <tr>
+        <td>
+            $ git push &lt;remote&gt; &lt;tag name&gt;
+            
+        </td>
+    </tr>
+                
+            
+                
+    
+    <tr>
+        <td>
+            Remove tag from remote
+            
+        </td>
+    </tr>
+                    
+    
+    <tr>
+        <td>
+            $ git push --delete &lt;remote&gt; &lt;tag name&gt;
+            
+        </td>
+    </tr>
+                
+            
+        </tbody>
+    </table>
+
+                
+            
+                
+    <table id="configuration" class="">
+        <colgroup/>
+        <thead>
+            <tr>
+                <th>
+                    Configuration
+                    
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            
+                
+    
+    <tr>
+        <td>
+            Set user name
+            
+        </td>
+    </tr>
+                    
+    
+    <tr>
+        <td>
+            $ git config [--global|--local] user.name &#34;name&#34;
+            
+        </td>
+    </tr>
+                
+            
+                
+    
+    <tr>
+        <td>
+            Set email address
+            
+        </td>
+    </tr>
+                    
+    
+    <tr>
+        <td>
+            $ git config [--global|--local] user.email &#34;email@domain&#34;
+            
+        </td>
+    </tr>
+                
+            
+                
+    
+    <tr>
+        <td>
+            Enable colorization
+            
+        </td>
+    </tr>
+                    
+    
+    <tr>
+        <td>
+            $ git config [--global|--local] color.ui auto
+            
+        </td>
+    </tr>
+                
+            
+        </tbody>
+    </table>
+
+                
+            
+
+        </div>
+
+    </div> <!-- main -->
+
+
+    
+        <footer >
+            <div class="container-fluid">
+                
+                    
+                        <div class="col-md-4">
+                           <div class='details-header'>legend</div>
+                            <dl class="dl-horizontal">
+                                
+                                    <dt>[argument]</dt>
+                                    <dd>Optional argument</dd>
+                                
+                                    <dt>&lt;argument&gt;</dt>
+                                    <dd>Fill by user</dd>
+                                
+                            </dl>
+                        </div>
+                    
+                        <div class="col-md-4">
+                           <div class='details-header'>tools</div>
+                            <dl class="dl-horizontal">
+                                
+                                    <dt>git-gui</dt>
+                                    <dd>Check your changes before commit</dd>
+                                
+                                    <dt>gitk</dt>
+                                    <dd>Track the history</dd>
+                                
+                            </dl>
+                        </div>
+                    
+                
+            </div>
+        </footer>
+    
+</div> <!-- wrapper -->
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+     <!-- Bootstrap -->
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+</body>
+</html>
