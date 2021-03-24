@@ -12,14 +12,18 @@ Initialize a local repository = $ git init [<project name>]
 
 Show changed files in your working directory = $ git status
 
+Show ignored files = $ git status --ignored
+
 Show differences not added to index = $ git diff
+
+Show difference between staging area and repo = $$ git diff --staged [file]
 
 Show differences relative to a branch or commit = $ git diff <commit or branch>
 
 # Add
 Add changes to next commit = $ git add <file or directory>  $$ use -u to add changes in all tracked files
 
-Remove file(s) from next commit = $ git reset HEAD <file(s)>
+Remove file(s) from next commit = $ git reset HEAD <file(s)> $$ to undo all $ git reset .
 
 # Remove
 Remove a file (from workspace and index) = $ git rm <file(s)>
@@ -29,9 +33,10 @@ Rename a file (in workspace and index) = $ git mv <file(s)>
 
 Remove files not under version control = $ git clean  $$ use -n for "dry run" and -f to delete the files
 
-??Discard uncommitted changes = $ git checkout <file(s) or dir>
+Discard uncommitted changes = $ git checkout -- <file(s) | dir>
 
-Match workspace and index to other tree  $$ default is local tree $$ use to start over on a failed merge  = $ git reset --hard [<remote>/<branch>]
+# Match workspace and index to other tree  $$ default is local tree $$ use to start over on a failed merge  = $ git reset --hard [<remote>/<branch>]
+
 
     [[Stash]]
 
@@ -51,13 +56,6 @@ Match workspace and index to other tree  $$ default is local tree $$ use to star
 
 # History
 List commits for current branch = $ git log
-
-# Tags
-Mark current commit with a tag =  $ git tag <tag name>
-
-Mark current commit with an annotated tag =  $ git tag -a <tag name> -m "<tag message>"
-
-Remove tag = $ git tag --delete <tag name>
 
 # Diff
 View changes between two commits = $ git diff <commit> <commit>
@@ -83,13 +81,23 @@ Stop tracking a file = $ git rm --cached <file>
 
     Commit all local changes in tracked files = $ git commit -a [-m "<message>"]
 
-    Undo last commit (leave changes on index) = $ git reset --soft HEAD^
-
     Modify last commit with current changes in index = $ git commit --amend
+
+    Undo some commits = $ git reset [--soft] HEAD~<X> $$ --soft to leave changes on index
+
+    Discard a some commits from current branch $$ changes are lost = $ git reset --hard HEAD~<X>|<commit>
 
     Reverse a commit and commit the results = $ git revert <commit>
 
     Revert all commits since your branch deviated from other and apply them one by by on top of the HEAD of that branch = $ git rebase <branch>
+
+    [[Tags]]
+
+    Mark current commit with a tag =  $ git tag <tag name>
+
+    Mark current commit with an annotated tag =  $ git tag -a <tag name> -m "<tag message>"
+
+    Remove tag = $ git tag --delete <tag name>
 
     [[Merge]]
 
@@ -98,8 +106,6 @@ Stop tracking a file = $ git rm --cached <file>
     Merge branch or commit into current HEAD $$ Use --no-commit to leave changes uncommitted = $ git merge <branch or commit>
 
     Integrate changes from a specific commit = $ git cherry-pick <commit>
-
-
 
 [Remote repository]
 
@@ -113,12 +119,22 @@ Push new branch to remote with a different name = $ git push <remote> <branch>:<
 
 Delete remote branch $$ push nothing = $ git push <remote> :<branch>
 
-# Tags
-Publish all your tags = $ git push --tags
 
-Publish specific tag = $ git push <remote> <tag name>
+    [[Tags]]
 
-Remove tag from remote = $ git push --delete <remote> <tag name>
+    Publish all your tags = $ git push --tags
+
+    Publish specific tag = $ git push <remote> <tag name>
+
+    Remove tag from remote = $ git push --delete <remote> <tag name>
+
+[configuration]
+
+Set user name = $ git config [--global|--local] user.name "name"
+
+Set email address = $ git config [--global|--local] user.email "email@domain"
+
+Enable colorization = $ git config [--global|--local] color.ui auto
 
 [footer]
     [[legend]]
